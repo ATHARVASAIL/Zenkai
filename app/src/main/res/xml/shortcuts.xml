@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut"
+        android:shortcutId="weight"
+        android:shortcutShortLabel="@string/sc_weight">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="zenkai://open/weight"
+            android:targetClass="app.systemzero.MainActivity"
+            android:targetPackage="app.systemzero" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut"
+        android:shortcutId="food"
+        android:shortcutShortLabel="@string/sc_food">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="zenkai://open/food"
+            android:targetClass="app.systemzero.MainActivity"
+            android:targetPackage="app.systemzero" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut"
+        android:shortcutId="coach"
+        android:shortcutShortLabel="@string/sc_coach">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="zenkai://open/coach"
+            android:targetClass="app.systemzero.MainActivity"
+            android:targetPackage="app.systemzero" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut"
+        android:shortcutId="voice"
+        android:shortcutShortLabel="@string/sc_voice">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="zenkai://open/voice"
+            android:targetClass="app.systemzero.MainActivity"
+            android:targetPackage="app.systemzero" />
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ZENKAI</string>
+    <string name="sc_weight">Log weight</string>
+    <string name="sc_food">Add food</string>
+    <string name="sc_coach">Ask the coach</string>
+    <string name="sc_voice">Talk</string>
+</resources>

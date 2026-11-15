@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#0a0f16" />
+    <meta name="author" content="Atharva Sail" />
+    <meta
+      name="description"
+      content="ZENKAI: a personal training, food and progress tracker with a built-in coach."
+    />
+    <title>ZENKAI</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%2306101c'/%3E%3Cpath fill='%231e90ff' d='M17 12h30L29 33h14l-3 9H10l18-21H14z'/%3E%3Cpath fill='%23f3f8fd' d='M14 9h30L26 30h14l-3 9H7l18-21H11z'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header id="top">
+        <div class="brand">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path class="zs" d="M17 12h30L29 33h14l-3 9H10l18-21H14z" />
+            <path class="zf" d="M14 9h30L26 30h14l-3 9H7l18-21H11z" /></svg
+          ><span class="wm">ZENKAI</span>
+        </div>
+        <div class="topr">
+          <button
+            class="stat"
+            id="netstat"
+            data-act="tab"
+            data-tab="coach"
+            type="button"
+            aria-label="Open the coach"
+          >
+            <b></b><span>Coach</span>
+          </button>
+          <button class="ib" id="vbtn" data-act="voice" type="button" aria-label="Talk to your assistant">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <rect x="9" y="3" width="6" height="11" rx="3" />
+              <path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" />
+            </svg>
+          </button>
+          <button class="ib" data-act="system" type="button" aria-label="Menu: settings and guides">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <main id="view" tabindex="-1"></main>
+      <div id="timer" hidden>
+        <div>
+          <small id="tmk">REST</small>
+          <div class="tm num" id="tm">0:00</div>
+        </div>
+        <div>
+          <div class="sm mut" id="tml"></div>
+          <div class="bar" style="margin-top: 5px"><i id="tmb"></i></div>
+        </div>
+        <button class="btn sm" data-act="timeradd" type="button">+15s</button>
+        <button class="btn sm" data-act="timerskip" type="button">Skip</button>
+      </div>
+      <button id="vstop" type="button" data-act="vstop" hidden>Stop reading</button>
+      <button id="fab" type="button" data-act="quick" aria-label="Quick log">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      </button>
+      <nav id="nav" aria-label="Sections"></nav>
+      <div id="scrim" hidden data-act="closesheet"></div>
+      <div id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheet-t">
+        <div class="sh">
+          <h2 id="sheet-t"></h2>
+          <button class="ib" id="sheet-say" data-act="saysheet" type="button" aria-label="Read this aloud">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
+              <path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" />
+            </svg></button
+          ><button class="ib" data-act="closesheet" type="button" aria-label="Close">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+        <div class="sb" id="sheet-b"></div>
+      </div>
+      <div id="toast" hidden role="status"></div>
+      <input type="file" id="pickjson" accept=".json,application/json,text/plain" hidden />
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/learn.js"></script>
+    <script src="js/plan.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/coach.js"></script>
+    <script src="js/voice.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+</html>

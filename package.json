@@ -1,0 +1,18 @@
+{
+  "name": "zenkai",
+  "version": "6.2.1",
+  "description": "Personal training, food and progress tracker for Android with a built-in coach, voice control and research-backed plans.",
+  "author": "Atharva Sail",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "node tests/plan-check.js && node tests/coach-check.js",
+    "format": "prettier --write \"app/src/main/assets/www/**/*.{js,css,html}\" \"tests/*.js\"",
+    "format:check": "prettier --check \"app/src/main/assets/www/**/*.{js,css,html}\" \"tests/*.js\"",
+    "serve": "python3 -m http.server 8080 --directory app/src/main/assets/www",
+    "build": "bash build.sh"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.0"
+  }
+}

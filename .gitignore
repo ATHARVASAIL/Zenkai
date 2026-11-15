@@ -1,0 +1,28 @@
+# Build output
+build/
+app/build/
+*.apk
+*.aab
+
+# Build tools (downloaded separately, see README.md)
+tools/
+
+# Signing: never commit these
+keystore/
+keystore.properties
+*.jks
+*.keystore
+
+# Android Studio / Gradle
+.gradle/
+.idea/
+*.iml
+local.properties
+captures/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

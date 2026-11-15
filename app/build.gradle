@@ -1,0 +1,52 @@
+// ZENKAI — Android Studio / Gradle build. Author: Atharva Sail
+plugins {
+    id 'com.android.application'
+}
+
+// Signing details live in keystore.properties, which is not committed (see keystore.properties.example).
+def keystoreFile = rootProject.file('keystore.properties')
+def keystore = new Properties()
+if (keystoreFile.exists()) {
+    keystoreFile.withInputStream { keystore.load(it) }
+}
+
+android {
+    namespace 'app.systemzero'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'app.systemzero'
+        minSdk 26
+        targetSdk 34
+        versionCode 10
+        versionName '6.2.1'
+    }
+
+    signingConfigs {
+        personal {
+            if (keystoreFile.exists()) {
+                storeFile rootProject.file(keystore['storeFile'])
+                storePassword keystore['storePassword']
+                keyAlias keystore['keyAlias']
+                keyPassword keystore['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            if (keystoreFile.exists()) {
+                signingConfig signingConfigs.personal
+            }
+        }
+        release {
+            minifyEnabled false
+            signingConfig keystoreFile.exists() ? signingConfigs.personal : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
